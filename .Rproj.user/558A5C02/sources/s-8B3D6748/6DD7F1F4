@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556577324822.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6DD7F1F4",
+    "lastKnownWriteTime" : 1556578266,
+    "last_content_update" : 1556578266542,
+    "path" : "~/Desktop/Berkeley/Second Year/Spring 2019/STAT 133/binomial/R/main.R",
+    "project_path" : "R/main.R",
+    "properties" : {
+        "cursorPosition" : "126,0",
+        "scrollLine" : "108",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
