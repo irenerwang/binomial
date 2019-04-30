@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556597807572.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E8DE90B3",
+    "lastKnownWriteTime" : 1556597840,
+    "last_content_update" : 1556597840056,
+    "path" : "~/Desktop/Berkeley/Second Year/Spring 2019/STAT 133/binomial/devtools-flow.R",
+    "project_path" : "devtools-flow.R",
+    "properties" : {
+        "cursorPosition" : "6,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
