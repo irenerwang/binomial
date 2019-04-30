@@ -68,10 +68,9 @@ bin_distribution <- function(trials, prob){
   return(distribution)
 }
 
-#########################fix this one!
 #' @export
 plot.bindis <- function(dist){
-  return(barplot(dist$probability))
+  return(barplot(dist$probability, xlab = 'successes', ylab = 'probability'))
 }
 
 #' @title: bin_cumulative
@@ -96,10 +95,10 @@ bin_cumulative <- function(trials, prob){
   return(cumulative)
 }
 
-#########################fix this one!
+
 #' @export
 plot.bincum <- function(dist){
-  return(plot(dist$cumulative, type = 'b'))
+  return(plot(dist$cumulative, type = 'b', xlab = 'successes', ylab = 'probability'))
 }
 
 #' @title: bin_variable
@@ -113,27 +112,48 @@ bin_variable <- function(trials, prob) {
   valid_trials <- check_trials(trials)
   valid_prob <- check_prob(prob)
   variable <- c(trials, prob)
-  names(variable) <- c('number of trials', 'prob of success')
   class(variable) <- 'binvar'
   return(variable)
 }
 
-#########################fix this one!
 #' @export
 print.binvar <- function(variable){
-  print(variable)
+  cat('Binomial Variable"\n\n')
+  cat('Parameters"\n\n')
+  cat(sprintf('number of sides: %s', variable[1]), "\n")
+  cat(sprintf('prob of success: %s', variable[2]), "\n")
 }
 
-#########################fix this one!
 #' @export
 summary.binvar <- function(variable){
-  return(summary(variable))
+  trials <- variable[1]
+  prob <- variable[2]
+  mean <- aux_mean(trials, prob)
+  variance <- aux_variance(trials, prob)
+  mode <- aux_mean(trials, prob)
+  skewness <- aux_skewness(trials, prob)
+  kurtosis <- aux_kurtosis(trials, prob)
+  summary <- c(trials, prob, mean, variance, mode, skewness, kurtosis)
+  names(summary) <- c('trials', 'prob', 'mean', 'variance', 'mode', 'skewness', 'kurtosis')
+  class(summary) <- 'summary.binvar'
+  return(summary)
 }
 
 #########################fix this one!
 #' @export
 print.summary.binvar <- function(variable){
-  print(summary(variable))
+  summary_var <- summary(variable)
+  cat('Summary Binomial"\n\n')
+  cat('Parameters"\n\n')
+  cat(sprintf('number of sides: %s', summary_var[1]), "\n")
+  cat(sprintf('prob of success: %s', summary_var[2]), "\n\n")
+  cat('Measures"\n\n')
+  cat(sprintf('Mean: %s', summary_var[3]), "\n")
+  cat(sprintf('Variance: %s', summary_var[4]), "\n")
+  cat(sprintf('Mode: %s', summary_var[5]), "\n")
+  cat(sprintf('Skewness: %s', summary_var[6]), "\n")
+  cat(sprintf('Kurtosis: %s', summary_var[7]), "\n")
+
 }
 
 #' @title: bin_mean
